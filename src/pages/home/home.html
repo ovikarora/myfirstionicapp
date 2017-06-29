@@ -18,10 +18,6 @@
     <ion-item>
       <ion-label floating>Password</ion-label>
       <ion-input type="password" [(ngModel)]="password"></ion-input>
-
-
-
-
     </ion-item>
 
 
@@ -32,7 +28,7 @@
 
     </ion-item>
 
-      <ion-item *ngFor="let item of students">
+      <ion-item *ngFor="let item of all_students">
         <ion-row>
 
           <p class="para">{{item.name}}</p>
@@ -49,7 +45,7 @@
 
     <button ion-button (click)="addstudent()">Add Student</button>
 
-    <button ion-button (click)="gotosecondpage()">login</button>
+    <button ion-button (click)="setdata()">Login save</button>
   </ion-list>
 
   <ion-input type="text" [(ngModel)]="addcomments"></ion-input>
