@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import {SecondPage} from "../second/second";
 import {DatafetchProvider} from "../../providers/datafetch/datafetch";
 import {RequestOptions, Headers, Http} from "@angular/http";
-import {listOptions} from "@ionic/app-scripts";
+//import {listOptions} from "@ionic/app-scripts";
 
 @Component({
   selector: 'page-home',
@@ -36,12 +36,12 @@ update:any;
     headers.append('Access-Control-Allow-Origin','*');
     let option=new RequestOptions({headers:headers});
 
-    this.http.post(' ',JSON.stringify(this.update), option)
+    this.http.post('https://ovik.herokuapp.com/well',JSON.stringify(this.update), option)
       .map(res=>res.json()).subscribe(data=>{
         console.log(data)
     },
     err=>{
-       console.log("Error! : ",err.json());
+       console.log("Error! : ");
     });
   }
 
