@@ -34,15 +34,16 @@ update:any;
     var headers=new Headers();
     headers.append('content-type','application/json;charset=UTF-8');
     headers.append('Access-Control-Allow-Origin','*');
-    let option=new RequestOptions({headers:headers});
+    let options=new RequestOptions({headers:headers});
 
-    this.http.post('https://ovik.herokuapp.com/well',JSON.stringify(this.update), option)
+    this.http.post('https://ovik.herokuapp.com/well',JSON.stringify(this.update), options)
       .map(res=>res.json()).subscribe(data=>{
         console.log(data)
     },
     err=>{
        console.log("Error! : ");
     });
+
   }
 
 
